@@ -29,9 +29,9 @@
     /*Verifica se os campos estão vazios ou nulos */
     
     if(empty($nome) || $nome == null){
-        session_start();
-        echo  "O Nome não pode ser vazio.";
-        header('Location: http://localhost/php%20testes%20e%20estudos/back-end/validacao_form/');
+        //session_start();
+        echo  "<h2>O Nome não pode ser vazio.<h2>";
+        //header('Location: http://localhost/php%20testes%20e%20estudos/back-end/validacao_form/');
         exit();
     } 
 
