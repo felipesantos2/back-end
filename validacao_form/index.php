@@ -63,7 +63,7 @@
 <div class="container">
     <div class="form">
         <h1>Cadastro de Usuario</h1>
-        <form action="" method="POST">
+        <form action="db/processa.php" method="POST">
             <div>
                 <input type="text" name="text_name" placeholder="NOME">
             </div>
