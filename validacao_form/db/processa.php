@@ -5,17 +5,17 @@
 
     include_once "config.php";
     
-    // $nome = trim(htmlspecialchars($_POST['text_name']));
-    // $email = trim(htmlspecialchars($_POST['text_email']));
-    // $senha =  trim(htmlspecialchars($_POST['t_senha']));
+    $nome = trim(htmlspecialchars($_POST['text_name']));
+    $email = trim(htmlspecialchars($_POST['text_email']));
+    $senha =  trim(htmlspecialchars($_POST['t_senha']));
 
-    $nome = cleanPost($_POST['text_name']);
-    $email = cleanPost($_POST['text_email']);
-    $senha =  cleanPost($_POST['t_senha']);
-    
-    // $nome = stripslashes($nome);
-    // $email = stripslashes($email);
-    // $senha = stripslashes($senha);
+    // $nome = cleanPost($_POST['text_name']);
+    // $email = cleanPost($_POST['text_email']);
+    // $senha =  cleanPost($_POST['t_senha']);
+
+    $nome = stripslashes($nome);
+    $email = stripslashes($email);
+    $senha = stripslashes($senha);
 
 
     function cleanPost($dados) {
@@ -29,7 +29,9 @@
     /*Verifica se os campos estão vazios ou nulos */
     
     if(empty($nome) || $nome == null){
+        session_start();
         echo  "O Nome não pode ser vazio.";
+        header('Location: http://localhost/php%20testes%20e%20estudos/back-end/validacao_form/');
         exit();
     } 
 
