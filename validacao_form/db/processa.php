@@ -18,7 +18,7 @@
     $senha = stripslashes($senha);
 
 
-    function cleanPost($dados) {
+    function limpa($dados) {
         $dados = trim($dados);
         $dados = stripslashes($dados);
         $dados = htmlspecialchars($dados);
@@ -45,9 +45,29 @@
         exit();
     }
 
+    if(strlen($nome) <= 10 && strlen($email) <= 10) {
+        echo "Os campos possuem poucos caracteres.";
+        exit();
 
- }
+    }
+
+    if(!is_string("$nome")){
+        echo "O nome não coresponde a um texto";
+        exit();
+    }
+
+    if(is_numeric($nome)){
+        echo "preencha com textos por favor";
+        exit();
+
+    }
+
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        echo "padrão de email invalido";
+        exit();
+
+    }
 
 
 
-
+}

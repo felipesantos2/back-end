@@ -8,7 +8,7 @@
 
     // conexão com mysqli 
     
-    $conexao = new mysqli($dbhost,$dbusername,$dbpassword,$dbname);
+    $conexao = new mysqli($dbhost, $dbusername, $dbpassword, $dbname);
 
 
 
