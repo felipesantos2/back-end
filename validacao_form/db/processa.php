@@ -9,10 +9,6 @@
     $email = trim(htmlspecialchars($_POST['text_email']));
     $senha =  trim(htmlspecialchars($_POST['t_senha']));
 
-    // $nome = cleanPost($_POST['text_name']);
-    // $email = cleanPost($_POST['text_email']);
-    // $senha =  cleanPost($_POST['t_senha']);
-
     $nome = stripslashes($nome);
     $email = stripslashes($email);
     $senha = stripslashes($senha);
@@ -45,16 +41,16 @@
         exit();
     }
 
-    if(strlen($nome) <= 10 && strlen($email) <= 10) {
-        echo "Os campos possuem poucos caracteres.";
-        exit();
+    // if(strlen($nome) <= 5 && strlen($email) <= 10) {
+    //     echo "Os campos possuem poucos caracteres.";
+    //     exit();
 
-    }
+    // }
 
-    if(!is_string("$nome")){
-        echo "O nome não coresponde a um texto";
-        exit();
-    }
+    // if(!is_string("$nome")){
+    //     echo "O nome não coresponde a um texto";
+    //     exit();
+    // }
 
     if(is_numeric($nome)){
         echo "preencha com textos por favor";

@@ -77,11 +77,11 @@
                 
                 </div>
                 <div>
-                    <input type="email" name="text_email" placeholder="E-MAIL">
+                    <input type="text" name="text_email" placeholder="E-MAIL">
     
                 </div>
                 <div>
-                    <input type="password" name="t_senha" placeholder="SENHA">
+                    <input type="text" name="t_senha" placeholder="SENHA">
                     
                 </div>
                 <div>
