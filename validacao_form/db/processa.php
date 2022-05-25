@@ -1,7 +1,7 @@
 <?php
 
 
- if (isset($_POST['text_name']) && isset($_POST['text_email'])  && isset($_POST['t_senha']) && isset($_POST['t_acao'])){
+if (isset($_POST['text_name']) && isset($_POST['text_email'])  && isset($_POST['t_senha']) && isset($_POST['t_acao'])){
 
     include_once "config.php";
     
@@ -41,16 +41,6 @@
         exit();
     }
 
-    // if(strlen($nome) <= 5 && strlen($email) <= 10) {
-    //     echo "Os campos possuem poucos caracteres.";
-    //     exit();
-
-    // }
-
-    // if(!is_string("$nome")){
-    //     echo "O nome não coresponde a um texto";
-    //     exit();
-    // }
 
     if(is_numeric($nome)){
         echo "preencha com textos por favor";
