@@ -34,8 +34,7 @@
     }
 
 
-    if()
-    
+
 
     $usuario_nome = $_POST['text_name'];
     $usuario_email = $_POST['text_email'];
