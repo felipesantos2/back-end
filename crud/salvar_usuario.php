@@ -1,7 +1,7 @@
 <?php
 
     switch ($_REQUEST['acao']) {
-        case 'cadastar':
+        case 'cadastrar':
 
             $nome = $_POST['text_name'];
             $email = $_POST['text_email'];
