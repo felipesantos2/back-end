@@ -1,35 +1,36 @@
 <?php
-$erroN = $erroE = $erroM = "";
+session_start();
+// $erroN = $erroE = $erroM = "";
 
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = @$_POST['nome'];
-    $email = @$_POST['email'];
-    $mensagem  = @$_POST['mensagem'];
-} #else {
-   # echo "<span>Falha no metodo de requisição<span>";}
+// if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+//     $nome = @$_POST['nome'];
+//     $email = @$_POST['email'];
+//     $mensagem  = @$_POST['mensagem'];
+// } #else {
+//    # echo "<span>Falha no metodo de requisição<span>";}
 
-if (isset($_POST['submit'])) {
+// if (isset($_POST['submit'])) {
 
-    if ($nome == '') {
-        // echo '<script>alert("Preencha os campos por favor")</script>';
-        // echo "<span>Preencha por favor o campo NOME</span><br>";
-        $erroN = "<span>Preencha por favor o campo NOME</span><br>";
-    }
-    if ($email == '') {
-        // echo '<script>alert("preencha os campos por favor")</script>';
-        // echo "<span>preencha por favor  o Campo E-MAIL</span><br>";
-        $erroE = "<span>Preencha por favor  o Campo E-MAIL</span><br>";
-    }
-    if ($mensagem == '') {
-        // echo '<script>alert("preencha os campos por favor")</script>';
-        // echo "<span>preencha por favor a MENSAGEM</span><br>";
-        $erroM = "<span>Preencha por favor a MENSAGEM</span><br>";
-    }
-}
+//     if ($nome == '') {
+//         // echo '<script>alert("Preencha os campos por favor")</script>';
+//         // echo "<span>Preencha por favor o campo NOME</span><br>";
+//         $erroN = "<span>Preencha por favor o campo NOME</span><br>";
+//     }
+//     if ($email == '') {
+//         // echo '<script>alert("preencha os campos por favor")</script>';
+//         // echo "<span>preencha por favor  o Campo E-MAIL</span><br>";
+//         $erroE = "<span>Preencha por favor  o Campo E-MAIL</span><br>";
+//     }
+//     if ($mensagem == '') {
+//         // echo '<script>alert("preencha os campos por favor")</script>';
+//         // echo "<span>preencha por favor a MENSAGEM</span><br>";
+//         $erroM = "<span>Preencha por favor a MENSAGEM</span><br>";
+//     }
+// }
 
 
-?>
+// ?>
 
 
 <!DOCTYPE html>
@@ -62,29 +63,29 @@ if (isset($_POST['submit'])) {
         <div class="row">
             <div class="col-6">
                 <h1 class="my-5"> Formulário de Contato </h1>
-                <form action="index.php" method="POST">
+                <form action="processa.php" method="POST">
 
                     <div class="mb-5">
                         <input type="text" name="nome" placeholder="Digite seu nome:" class="form-control">
                         <?php
-                            if ($erroN != empty($erroN)) {
-                                echo $erroN;
+                            if ($_SESSION['erroN'] != empty($_SESSION['erroN'])) {
+                                echo $_SESSION['erroN'];
                             }
                         ?>
                     </div>
                     <div class="mb-5">
                         <input type="email" name="email" placeholder="Digite seu email:" class="form-control">
                         <?php
-                            if ($erroE != empty($erroE)) {
-                                echo $erroE;
+                            if ($_SESSION['erroE']!= empty($_SESSION['erroE'])) {
+                                echo $_SESSION['erroE'];
                             }
                         ?>
                     </div>
                     <div class="mb-5">
                         <textarea name="textarea" cols="30" rows="3" name="mensagem" placeholder="Digite mensagem" class="form-control"></textarea>
                         <?php
-                        if ($erroM != empty($erroM)) {
-                                echo $erroM;
+                        if ($_SESSION['erroM'] != empty($_SESSION['erroM'])) {
+                                echo $_SESSION['erroM'];
                             }
                         ?>
                     </div>
