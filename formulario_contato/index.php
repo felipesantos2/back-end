@@ -14,7 +14,7 @@
         <div class="row">
             <div class="col-6">
                 <h1 class="my-5"> Formulário de Contato </h1>
-                <form action="enviar.php" method="POST">
+                <form action="processa.php" method="POST">
 
                     <div class="mb-5">
                         <input type="text" name="nome" placeholder="Digite seu nome:" class="form-control">
