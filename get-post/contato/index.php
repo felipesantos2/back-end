@@ -1,3 +1,25 @@
+<?php
+
+    // $nome =$email = $texto = '';
+
+    include "db/config.php";
+    
+    $nome = htmlspecialchars($_POST['t_nome']);
+    $email = htmlspecialchars($_POST['t_email']);
+    $texto = htmlspecialchars($_POST['t_texto']);
+
+    //INSERINDO DADOS NO DB
+
+    $sql = "INSERT INTO emails(ID, email, nome) VALUES (null, '$email', '$nome')";
+
+
+    
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -38,7 +60,7 @@
                      
                     </div>
                     <div class="mb-5">
-                        <textarea name="textarea" cols="30" rows="3" name="t_texto" placeholder="Digite mensagem" class="form-control"></textarea>
+                        <textarea  cols="30" rows="3" name="t_texto" placeholder="Digite mensagem" class="form-control"></textarea>
                        
                     </div>
                     <div class="mb-5">
