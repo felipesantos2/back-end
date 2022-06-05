@@ -1,5 +1,6 @@
 <?php
 
+
     // $nome =$email = $texto = '';
 
     include "db/config.php";
@@ -11,6 +12,25 @@
     $nome  = trim($nome);
     $texto  = trim($texto);
     $email  = trim($email);
+
+
+    if($nome == ''){
+        $erro = "Preencha o campo nome";
+        exit();
+        
+    }
+    if($texto == ''){
+        $erro = "Preencha o campo texto";
+        exit();
+
+
+    }
+    if($email == ''){
+        $erro= "Preencha o campo email";
+        exit();
+
+
+    }
 
     //INSERINDO DADOS NO DB
 
@@ -44,6 +64,11 @@
         h1 {
             color: black;
         }
+
+        .erro {
+            color: red;
+            font-size: 1.2rem;
+        }
     </style>
 
 </head>
@@ -67,6 +92,17 @@
                         <textarea  cols="30" rows="3" name="t_texto" placeholder="Digite mensagem" class="form-control"></textarea>
                        
                     </div>
+
+                    <div class="mb-5">
+                        <span>
+                            <?php 
+                                if ( $erro != empty($erro)){
+                                    echo $erro;
+                                }
+                            ?>
+                        </span>
+                    </div>
+                
                     <div class="mb-5">
                         <button type="submit" name="submit" class="btn btn-primary">Enviar</button>
                     </div>
