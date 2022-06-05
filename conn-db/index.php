@@ -1,3 +1,43 @@
+<?php
+
+
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $nome = @$_POST['l_nome'];
+    $email = @$_POST['l_email'];
+    $senha  = @$_POST['l_senha'];
+} 
+
+if (isset($_POST['l_submit'])) {
+    
+
+    if ($nome == '') {
+     
+        
+
+    }
+
+    if ($email == '') {
+        
+
+    }
+
+    if ($senha == '') {
+
+
+    }
+
+
+}
+
+
+
+
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,7 +53,6 @@
     <div class="container">
         <header>
             <nav class="t_navbar">
-                <!-- <h1><a href="/">Container</a></h1> -->
                 <h1><img src="https://img.icons8.com/dotty/80/undefined/pixel-cat.png" /></h1>
                 <div>
                     <a href="/"> Hello</a>
@@ -46,6 +85,7 @@
                     </fieldset>
                 </form>
             </section>
+        </main>
     </div>
 
 </body>
