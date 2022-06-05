@@ -4,9 +4,13 @@
 
     include "db/config.php";
     
-    $nome = htmlspecialchars($_POST['t_nome']);
-    $email = htmlspecialchars($_POST['t_email']);
-    $texto = htmlspecialchars($_POST['t_texto']);
+    $nome = @htmlspecialchars($_POST['t_nome']);
+    $email = @htmlspecialchars($_POST['t_email']);
+    $texto = @htmlspecialchars($_POST['t_texto']);
+
+    $nome  = trim($nome);
+    $texto  = trim($texto);
+    $email  = trim($email);
 
     //INSERINDO DADOS NO DB
 
