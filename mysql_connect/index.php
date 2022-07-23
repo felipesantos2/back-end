@@ -1,8 +1,22 @@
 <?php
 
-    $email = $_POST['InputEmail'];
-    $passWord = $_POST['InputPassword'];
-    $enviar = $_POST['submit'];
+    $email = $password = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = limpa_inputs( $_POST['InputEmail']);
+    $passWord = limpa_inputs($_POST['InputPassword']);
+    $enviar = limpa_inputs($_POST['submit']);
+   
+}
+
+function limpa_inputs($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+echo $email;
 
 
 
@@ -39,11 +53,8 @@
                         <label for="InputPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="InputPassword" name="InputPassword">
                     </div>
-                    <div class="mb-3 form-check">
-                        <input type="checkbox" class="form-check-input" id="Check1" name="Check1">
-                        <label class="form-check-label" for="Check1">Check me out</label>
-                    </div>
-                    <button type="submit" name="submit" class="btn btn-primary">Submit</button>
+                    
+                    <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                 </form>
             </div>
             <!-- coluna 2 -->
