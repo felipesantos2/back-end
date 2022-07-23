@@ -1,12 +1,11 @@
 <?php
 
-    $email = $password = "";
+$email = $password = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = limpa_inputs( $_POST['InputEmail']);
+    $email = limpa_inputs($_POST['InputEmail']);
     $passWord = limpa_inputs($_POST['InputPassword']);
     $enviar = limpa_inputs($_POST['submit']);
-   
 }
 
 function limpa_inputs($data) {
@@ -14,9 +13,8 @@ function limpa_inputs($data) {
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
     return $data;
+    
 }
-
-echo $email;
 
 
 
@@ -43,7 +41,7 @@ echo $email;
         <div class="row">
             <!-- coluna 1 -->
             <div class="col">
-                <form>
+                <form method="POST">
                     <div class="mb-3">
                         <label for="InputEmail" class="form-label">Email:</label>
                         <input type="email" class="form-control" id="InputEmail" name="InputEmail" aria-describedby="emailHelp">
@@ -53,7 +51,7 @@ echo $email;
                         <label for="InputPassword" class="form-label">Password</label>
                         <input type="password" class="form-control" id="InputPassword" name="InputPassword">
                     </div>
-                    
+
                     <input type="submit" name="submit" class="btn btn-primary" value="Submit">
                 </form>
             </div>
