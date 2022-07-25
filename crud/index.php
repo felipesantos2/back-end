@@ -85,8 +85,10 @@ require_once "config.php";
                                     <?php echo $alunos['senha']; ?>
                                 </td>
                                 <td>
-                                    <a class="btn btn-success">view</a>
-                                    <a class="btn btn-danger">d</a>
+                                    <a href="?id=<?php echo $alunos['id']; ?>" class="btn btn-success">view</a>
+                                   
+                                    <a href="?id=<?php echo $alunos['id']; ?>" class="btn btn-danger">d</a>
+                                  
                                 </td>
                             </tbody>
                     <?php
@@ -95,7 +97,7 @@ require_once "config.php";
                     }
                     ?>
                 </table>
-             <div>
+            </div>
         </div>
     </div>
 </body>
